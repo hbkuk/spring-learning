@@ -28,6 +28,7 @@ public class ManyToOneTest {
         entityManager.persist(publisher);
 
         Book book = new Book("책", publisher);
+
         entityManager.persist(book);
 
         Book persistBook = entityManager.find(Book.class, book.getId());

@@ -1,5 +1,14 @@
 package cholog;
 
-public interface CustomerRepository {
+import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
+public interface CustomerRepository extends CrudRepository<Customer, Long> {
+
+    List<Customer> findByLastName(String name);
+
+    List<Customer> findByLastNameIgnoreCase(String name);
+
+    List<Customer> findByLastNameOrderByFirstNameDesc(String name);
 }
